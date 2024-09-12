@@ -43,9 +43,6 @@ const Navbar = ({ children }) => {
                     }
                 </ul>
             </div>
-            <div className='nav-social'>
-                <SocialBar />
-            </div>
             {children}
 
         </nav>

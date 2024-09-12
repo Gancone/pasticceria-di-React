@@ -1,9 +1,10 @@
-import React from 'react'
-import pasticceria from "../media/image/pasticceria.png";
+import React from 'react';
+import { Link } from 'react-router-dom';
 const Home = () => {
     return (
         <header>
-            <img className='header-img' src={pasticceria} />
+            <Link to="/lista" alt="scopri di più" className='btn-home'>
+                <p>Scopri di più</p></Link>
         </header>
     )
 }

@@ -58,6 +58,7 @@ label {
     font-family: "Poppins", sans-serif;
 }
 
+
 /* NAVBAR */
 
 .nav {
@@ -102,11 +103,7 @@ a {
     margin: 15px;
 }
 
-.nav-social a {
-    color: var(--crema);
-    font-size: 24px;
-    transition: var(--main-transition);
-}
+
 
 .nav-toggler {
     display: none;
@@ -219,6 +216,7 @@ label {
     font-size: 24px;
     font-weight: 600;
     color: var(--crema);
+    text-shadow: 3px 3px var(--marrone);
 }
 
 input,
@@ -226,6 +224,10 @@ textarea {
     font-size: 24px;
     border: var(--radius);
     margin-top: 20px;
+}
+
+textarea {
+    width: 36rem;
 }
 
 button[type="submit"] {
@@ -238,12 +240,37 @@ button[type="submit"] {
 
 /*  HOME  */
 header {
-    height: 100vh;
-}
-
-.header-img {
+    background: url("./media/image/pasticceria.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     width: 100%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header button {
+    width: 15rem;
+    height: 5rem;
+    background-color: var(--marrone);
+    font-size: 24px;
+    border: 3px solid var(--crema);
+    box-shadow: var(--secondary-shadow);
+}
+
+.btn-home {
+    width: 15rem;
+    height: 5rem;
+    background-color: var(--marrone);
+    font-size: 24px;
+    border: 3px solid var(--crema);
+    border-radius: var(--radius);
+    color: var(--crema);
+    cursor: pointer;
+    text-align: center;
 }
 
 /* FINE HOME */
@@ -257,10 +284,32 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     transition: var(--main-transition);
     color: var(--crema);
     position: relative;
     z-index: 999;
+    padding: 20px 0;
+}
+
+.footer-social ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+
+}
+
+.footer-social li {
+    list-style-type: none;
+    margin: 0 3rem;
+
+}
+
+.footer-social a {
+
+    color: var(--crema);
+    font-size: 24px;
+    transition: var(--main-transition);
 }
 
 /* FINE FOOTER */
@@ -307,7 +356,15 @@ header {
         padding: 1rem;
     }
 
-    .nav-social {
-        display: none;
+
+    /* CONTATTACI */
+
+    .container-form {
+        width: 95%;
+        overflow-x: hidden;
+    }
+
+    textarea {
+        width: 30rem;
     }
 }

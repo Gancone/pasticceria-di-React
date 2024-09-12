@@ -21,7 +21,7 @@ const Contattaci = () => {
                 </div>
                 <div className='container-contattaci'>
                     <label className='contattaci-label'>Descrizione</label>
-                    <textarea type='text' placeholder='Inserisci qui la descrizione' rows={10} cols={50}></textarea>
+                    <textarea type='text' placeholder='Inserisci qui la descrizione' rows={10}></textarea>
 
                 </div>
                 <button type='submit'>Invia</button>
