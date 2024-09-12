@@ -1,13 +1,256 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    /* light mode */
+    /* --crema: #F7E1C1;
+    --rosa-pastello: #F8B195;
+    --marrone-cioccolato: #6C4A3D; */
+    /* --crema-sporco: #FAF9F6; */
+    /* darkmode */
+    /* --marrone-fondente: #2E1F1B;
+    --crema-vaniglia: #D7C9AA;
+    --rosa-scuro: #A85C5C;
+    --grigio: #2B2B2B;
+ */
+    /* Global */
+    --radius: 15px;
+    --main-transition: 200ms;
+    /* --secondary-shadow: 0px 12px 20px rgb(22, 22, 22); */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.light-mode {
+    --crema: #F7E1C1;
+    --rosa: #F8B195;
+    --marrone: #6C4A3D;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.521);
+    transition: var(--main-transition);
+    --crema-sporco: #FAF9F6;
+    --secondary-shadow: 0px 12px 20px rgb(22, 22, 22);
+    --gradient: linear-gradient(132deg, rgba(247, 225, 193, 1) 0%, rgba(108, 74, 61, 1) 50%, rgba(247, 225, 193, 1)90%);
 }
+
+.dark-mode {
+    --marrone: #2E1F1B;
+    --crema: #D7C9AA;
+    --rosa: #A85C5C;
+    --shadow: 4px 5px 15px rgba(190, 190, 190, 0.877);
+    transition: var(--main-transition);
+    --crema-sporco: rgb(39, 39, 39, 0.5);
+    --secondary-shadow: 0px 12px 20px rgb(77, 77, 77);
+    --gradient: linear-gradient(132deg, rgba(168, 92, 92, 1) 0%, rgba(46, 31, 27, 1) 50%, rgba(168, 92, 92, 1) 90%);
+}
+
+body {
+    margin: 0 auto;
+}
+
+.body {
+    background-color: var(--crema-sporco);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label {
+    font-family: "Poppins", sans-serif;
+}
+
+/* NAVBAR */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--marrone);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: var(--main-transition);
+    box-shadow: var(--secondary-shadow)
+}
+
+.nav ul {
+    display: flex;
+}
+
+.nav ul li {
+    list-style: none;
+    padding: 0 3rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: var(--crema);
+    transition: var(--main-transition);
+}
+
+.nav-image {
+    width: 4rem;
+    height: 4rem;
+    margin-left: 50px;
+}
+
+.nav-social a {
+    color: var(--crema);
+    font-size: 24px;
+    transition: var(--main-transition);
+}
+
+
+/* FINE NAVBAR */
+
+/* CARD */
+
+.card {
+    background-color: var(--crema);
+    width: 18rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 50px;
+    margin: 10px 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: var(--main-transition);
+}
+
+.card:hover {
+    transition: var(--main-transition);
+    box-shadow: var(--shadow);
+}
+
+.container-img {
+    margin-top: 5px;
+    width: 17rem;
+    height: 12rem;
+    border-radius: var(--radius);
+}
+
+.container-body {
+    text-align: center;
+}
+
+button {
+    border-radius: var(--radius);
+    width: 6rem;
+    height: 3rem;
+    background-color: var(--marrone);
+    color: var(--crema);
+    margin-bottom: 0;
+    font-family: "Poppins", sans-serif;
+    transition: var(--main-transition);
+}
+
+.container-tot-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.operator {
+    margin: 0 10px;
+}
+
+.container-buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* FINE CARD */
+
+
+
+/* LIGHT-MODE AND DARK-MODE */
+
+.btn-mode {
+    margin-right: 40px;
+    font-size: 30px;
+    color: var(--crema);
+}
+
+
+/* CONTATTACI */
+
+
+.container-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: var(--crema);
+    width: 50%;
+    height: 75.26vh;
+    margin: 100px auto;
+    border: 5px solid var(--marrone);
+    border-radius: var(--radius);
+    background: var(--gradient);
+    box-shadow: var(--shadow);
+}
+
+.container-contattaci {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--crema);
+}
+
+input,
+textarea {
+    font-size: 24px;
+    border: var(--radius);
+    margin-top: 20px;
+}
+
+button[type="submit"] {
+    width: 12rem;
+    font-size: 20px;
+}
+
+
+/* FINE CONTATTACI */
+
+/*  HOME  */
+header {
+    height: 100vh;
+}
+
+.header-img {
+    width: 100%;
+    height: 100vh;
+}
+
+/* FINE HOME */
+
+
+/* FOOTER */
+
+.container-footer {
+    background-color: var(--marrone);
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--main-transition);
+    color: var(--crema);
+    position: relative;
+    z-index: 999;
+}
+
+/* FINE FOOTER */
