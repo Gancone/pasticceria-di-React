@@ -171,6 +171,11 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+
+}
+
+.container-buy button {
+    cursor: pointer;
 }
 
 
@@ -181,7 +186,7 @@ button {
 /* LIGHT-MODE AND DARK-MODE */
 
 .btn-mode {
-    margin-right: 40px;
+    margin-right: 25px;
     font-size: 30px;
     color: var(--crema);
 }
@@ -328,7 +333,7 @@ header button {
         transition: var(--main-transition);
         position: absolute;
         top: 30px;
-        right: 40px;
+        right: 50px;
     }
 
     .nav ul {
@@ -344,7 +349,7 @@ header button {
 
     .links-container {
         position: absolute;
-        top: 68px;
+        top: 75px;
         right: 0;
         width: 100%;
         overflow: hidden;
