@@ -203,14 +203,38 @@ button:hover {
 
 .container-tot-card {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     margin: 50px 0;
+    min-height: 82.6vh;
 }
 
-.operator {
-    margin: 0 10px;
+.tot-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
 }
+
+.search-input {
+    width: 100%;
+    max-width: 15em;
+    height: 30px;
+    border: 3px solid var(--marrone);
+    border-radius: var(--secondary-radius);
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* .operator {
+    margin: 0 10px;
+} */
 
 .container-buy {
     display: flex;
@@ -343,6 +367,9 @@ header {
 
 
 .btn-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 15rem;
     height: 5rem;
     background-color: var(--marrone);
@@ -351,9 +378,15 @@ header {
     border-radius: var(--radius);
     color: var(--crema);
     cursor: pointer;
-    text-align: center;
     font-weight: 600;
     text-transform: uppercase;
+    transition: var(--main-transition);
+}
+
+.btn-home:hover {
+    background-color: var(--crema);
+    border: 3px solid var(--marrone);
+    color: var(--marrone);
 }
 
 /* FINE HOME */
@@ -472,17 +505,15 @@ header {
     /* NAVBAR */
 
     .nav-toggler {
-        display: block;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
         background-color: transparent;
         border: none;
         font-size: 2rem;
-        margin-right: 20px;
+        margin-right: 40px;
         cursor: pointer;
         color: var(--crema);
-        transition: var(--main-transition);
-        position: absolute;
-        top: 30px;
-        right: 50px;
         z-index: 99999;
     }
 
@@ -503,7 +534,6 @@ header {
         right: 0;
         width: 100%;
         overflow: hidden;
-        transition: height 0.3s ease;
         background-color: var(--marrone);
         z-index: 99999;
         box-shadow: 0px 16px 10px rgba(68, 68, 68, 0.8);
@@ -564,4 +594,15 @@ header {
     }
 
     /* FINE SINGLE SWEET */
+
+    /* HOME */
+
+    .btn-home {
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* FINE HOME */
 }

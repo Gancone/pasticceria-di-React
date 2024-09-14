@@ -1,20 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import data from "../data";
 import { Link } from 'react-router-dom';
 
 
 const Card = () => {
+
+    const [searchProduct, setSearchProduct] = useState("");
+
+    const handleSearch = (e) => {
+        setSearchProduct(e.target.value);
+    }
+
+    const filteredProducts = data.filter(prodottoFiltrato =>
+        prodottoFiltrato.nome.toLowerCase().includes(searchProduct.toLowerCase())
+    );
     return (
         <div className='container-tot-card'>
-            {
-                data.map(el => {
+            <input
+                type="text"
+                placeholder="Cerca il tuo dolcetto..."
+                value={searchProduct}
+                onChange={handleSearch}
+                className="search-input"
+            />
+            <div>
+                <ul className='tot-cards'>
+                    {filteredProducts.length > 0 ? (
+                        filteredProducts.map((el) => (
+                            <SingleCard {...el} />
+                        ))
+                    ) : (
+                        <h2>Nessun prodotto trovato</h2>
+                    )}
+                </ul>
 
-                    return <SingleCard {...el} />
-
-                })
-            }
-
+            </div>
         </div>
+        /* {
+            data.map(el => {
+
+                return <SingleCard {...el} />
+
+            })
+        } */
+
     )
 }
 

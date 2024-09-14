@@ -29,10 +29,10 @@ const Navbar = ({ children }) => {
             <div>
                 <Link to="/" alt="home"><img className='nav-image' src={logo} alt='logo' /></Link>
             </div>
-            <button className='nav-toggler' onClick={() => setShow(!show)}>
+            <p className='nav-toggler' onClick={() => setShow(!show)}>
                 <FaBars />
 
-            </button>
+            </p>
             <div className={`nav-links ${show ? "links-container show" : "links-container"}`} ref={linkContainerRef}>
                 <ul ref={linkListRef}>
                     {
