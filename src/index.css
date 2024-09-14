@@ -299,6 +299,10 @@ textarea {
     border: 3px solid var(--marrone);
 }
 
+textarea {
+    width: 100%;
+}
+
 .container-contattaci {
     display: flex;
     flex-direction: column;
