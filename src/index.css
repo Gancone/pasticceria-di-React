@@ -7,11 +7,12 @@
     /* darkmode */
     /* --marrone-fondente: #2E1F1B;
     --crema-vaniglia: #D7C9AA;
-    --rosa-scuro: #A85C5C;
     --grigio: #2B2B2B;
- */
+    */
+    --rosa-scuro: #A85C5C;
     /* Global */
     --radius: 15px;
+    --secondary-radius: 8px;
     --main-transition: 200ms;
     /* --secondary-shadow: 0px 12px 20px rgb(22, 22, 22); */
 }
@@ -26,6 +27,7 @@
     --crema-sporco: #FAF9F6;
     --secondary-shadow: 0px 12px 20px rgb(22, 22, 22);
     --gradient: linear-gradient(132deg, rgba(247, 225, 193, 1) 0%, rgba(108, 74, 61, 1) 50%, rgba(247, 225, 193, 1)90%);
+    --reserved-name: #f7ac4b;
 }
 
 .dark-mode {
@@ -36,7 +38,8 @@
     transition: var(--main-transition);
     --crema-sporco: rgb(39, 39, 39, 0.5);
     --secondary-shadow: 0px 12px 20px rgb(77, 77, 77);
-    --gradient: linear-gradient(132deg, rgba(168, 92, 92, 1) 0%, rgba(46, 31, 27, 1) 50%, rgba(168, 92, 92, 1) 90%);
+    --gradient: linear-gradient(130deg, rgba(168, 92, 92, 1) 0%, rgba(46, 31, 27, 1) 50%, rgba(168, 92, 92, 1) 100%);
+    --reserved-name: #e09737;
 }
 
 body {
@@ -68,18 +71,22 @@ label {
     background-color: var(--marrone);
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 9999;
     transition: var(--main-transition);
-    box-shadow: var(--secondary-shadow)
+    box-shadow: var(--secondary-shadow);
 }
 
 .nav ul {
     display: flex;
+    padding: 0;
+    margin: 0;
 }
 
 .nav ul li {
     list-style: none;
     padding: 0 3rem;
+    position: relative;
+    /* Necessario per posizionare ::before */
 }
 
 a {
@@ -91,10 +98,36 @@ a {
     height: auto !important;
 }
 
-
 .nav-links a {
     color: var(--crema);
     transition: var(--main-transition);
+    position: relative;
+    /* Necessario per posizionare ::before */
+}
+
+/* Pseudo-elemento ::before per la striscia sottostante */
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--crema);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+/* Effetto hover per la striscia sottostante */
+.nav-links a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav-links a:hover {
+    color: var(--crema);
+    /* Cambia il colore del testo quando si passa sopra */
 }
 
 .nav-image {
@@ -117,7 +150,7 @@ a {
 .card {
     background-color: var(--crema);
     width: 18rem;
-    height: 30rem;
+    height: 32rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -145,6 +178,10 @@ a {
     text-align: center;
 }
 
+.container-body p {
+    padding: 0px 20px;
+}
+
 button {
     border-radius: var(--radius);
     width: 6rem;
@@ -154,6 +191,14 @@ button {
     margin-bottom: 0;
     font-family: "Poppins", sans-serif;
     transition: var(--main-transition);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: var(--crema);
+    color: var(--marrone);
+    font-weight: 800;
 }
 
 .container-tot-card {
@@ -183,6 +228,38 @@ button {
 
 
 
+/* SINGLE SWEET */
+
+.container-single-sweet {
+    min-height: 86.2vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-single-sweet-img {
+    width: 80%;
+    margin: 50px;
+    max-width: 800px;
+    max-height: 800;
+    border-radius: var(--radius);
+    border: 4px solid var(--marrone);
+    box-shadow: var(--shadow);
+}
+
+.container-single-sweet-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 40px;
+}
+
+
+/* FINE SINGLE SWEET */
+
+
+
 /* LIGHT-MODE AND DARK-MODE */
 
 .btn-mode {
@@ -201,13 +278,25 @@ button {
     justify-content: space-evenly;
     flex-direction: column;
     background-color: var(--crema);
-    width: 50%;
-    height: 75.26vh;
+    min-height: 84.2vh;
     margin: 100px auto;
     border: 5px solid var(--marrone);
     border-radius: var(--radius);
     background: var(--gradient);
+    background-color: black;
     box-shadow: var(--shadow);
+    max-width: 1100px;
+}
+
+.container-form input {
+    width: 100%;
+}
+
+.container-form input,
+textarea {
+    font-size: 20px;
+    border-radius: var(--secondary-radius);
+    border: 3px solid var(--marrone);
 }
 
 .container-contattaci {
@@ -215,6 +304,8 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 40%;
+    max-width: 600px;
 }
 
 label {
@@ -222,17 +313,6 @@ label {
     font-weight: 600;
     color: var(--crema);
     text-shadow: 3px 3px var(--marrone);
-}
-
-input,
-textarea {
-    font-size: 24px;
-    border: var(--radius);
-    margin-top: 20px;
-}
-
-textarea {
-    width: 36rem;
 }
 
 button[type="submit"] {
@@ -257,14 +337,6 @@ header {
     align-items: center;
 }
 
-header button {
-    width: 15rem;
-    height: 5rem;
-    background-color: var(--marrone);
-    font-size: 24px;
-    border: 3px solid var(--crema);
-    box-shadow: var(--secondary-shadow);
-}
 
 .btn-home {
     width: 15rem;
@@ -276,9 +348,41 @@ header button {
     color: var(--crema);
     cursor: pointer;
     text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 /* FINE HOME */
+
+
+/* ABOUT */
+.container-about {
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-about img {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 1000px;
+    border: 5px solid var(--crema);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.paragraph-about {
+    text-align: center;
+    font-size: 24px;
+}
+
+
+
+/* FINE ABOUT */
 
 
 /* FOOTER */
@@ -293,7 +397,7 @@ header button {
     transition: var(--main-transition);
     color: var(--crema);
     position: relative;
-    z-index: 999;
+    z-index: 99;
     padding: 20px 0;
 }
 
@@ -317,10 +421,51 @@ header button {
     transition: var(--main-transition);
 }
 
+.footer-reserved {
+    text-transform: uppercase;
+}
+
+.reserved-name {
+    color: var(--reserved-name);
+}
+
 /* FINE FOOTER */
 
-/* Quando lo schermo è più piccolo, mostra il toggler e nascondi il menu */
+/* ERROR PAGE */
+
+.btn-error-page {
+    border-radius: var(--radius);
+    border: 4px solid var(--crema);
+    width: 6rem;
+    background-color: var(--marrone);
+    color: var(--crema);
+    margin-bottom: 0;
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    transition: var(--main-transition);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.wrapper-error-page {
+    min-height: 86.2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-error-page:hover {
+    border: 4px solid var(--marrone);
+    background-color: var(--crema);
+    color: var(--marrone);
+}
+
 @media screen and (max-width: 1310px) {
+
+
+    /* NAVBAR */
 
     .nav-toggler {
         display: block;
@@ -334,6 +479,7 @@ header button {
         position: absolute;
         top: 30px;
         right: 50px;
+        z-index: 99999;
     }
 
     .nav ul {
@@ -349,27 +495,69 @@ header button {
 
     .links-container {
         position: absolute;
-        top: 75px;
+        top: 95px;
         right: 0;
         width: 100%;
         overflow: hidden;
         transition: height 0.3s ease;
         background-color: var(--marrone);
+        z-index: 99999;
+        box-shadow: 0px 16px 10px rgba(68, 68, 68, 0.8);
     }
 
     .nav ul li {
         padding: 1rem;
     }
 
+    /* FINE NAVBAR */
+
 
     /* CONTATTACI */
 
     .container-form {
         width: 95%;
+        height: 100%;
         overflow-x: hidden;
+        background: var(--gradient);
+        background-color: black;
+    }
+
+    .container-form input {
+        border-radius: var(--secondary-radius);
+        width: 270px;
     }
 
     textarea {
-        width: 30rem;
+        width: 20rem;
+        border-radius: var(--secondary-radius);
     }
+
+    .container-form input,
+    textarea {
+        font-size: 18px;
+    }
+
+    button[type="submit"] {
+        margin: 20px 0;
+    }
+
+    /* FINE CONTATTACI */
+
+
+    /* SINGLE SWEET */
+    .container-single-sweet {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .container-single-sweet-body {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    /* FINE SINGLE SWEET */
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { links, SocialBar } from "../utils/links";
+import { links } from "../utils/links";
 import logo from "../media/image/logo.png";
 import { Link } from 'react-router-dom';
 import { FaBars } from "react-icons/fa";
@@ -27,7 +27,7 @@ const Navbar = ({ children }) => {
     return (
         <nav className='nav'>
             <div>
-                <img className='nav-image' src={logo} />
+                <Link to="/" alt="home"><img className='nav-image' src={logo} alt='logo' /></Link>
             </div>
             <button className='nav-toggler' onClick={() => setShow(!show)}>
                 <FaBars />
@@ -38,7 +38,7 @@ const Navbar = ({ children }) => {
                     {
                         links.map(el => {
                             const { id, url, text } = el;
-                            return <li key={id}><h3><Link to={url} alt={text} onClick={closeMenu}>{text.toUpperCase()}</Link></h3></li>
+                            return <li key={id}><h3><Link to={url} alt={text} onClick={closeMenu} className='nav-a'>{text.toUpperCase()}</Link></h3></li>
                         })
                     }
                 </ul>
