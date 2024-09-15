@@ -297,6 +297,7 @@ button:hover {
     flex-direction: column;
     justify-content: space-around;
     padding-right: 50px;
+    color: var(--color-text);
 }
 
 .container-single-sweet-body p {
@@ -329,13 +330,13 @@ button:hover {
     flex-direction: column;
     background-color: var(--crema);
     min-height: 84.2vh;
-    margin: 100px auto;
+    margin: 50px auto;
     border: 5px solid var(--marrone);
     border-radius: var(--radius);
     background: var(--gradient);
     background-color: black;
     box-shadow: var(--shadow);
-    max-width: 1100px;
+    max-width: 900px;
 }
 
 .container-form input {
@@ -373,6 +374,8 @@ button[type="submit"] {
     font-size: 20px;
     color: var(--color-text);
     border: 3px solid var(--marrone);
+    cursor: pointer;
+    margin: 20px 0;
 }
 
 /* FINE CONTATTACI */
@@ -562,7 +565,7 @@ header {
         font-size: 2rem;
         margin-right: 40px;
         cursor: pointer;
-        color: var(--crema);
+        color: var(--color-text);
         z-index: 99999;
     }
 
@@ -612,7 +615,7 @@ header {
     }
 
     textarea {
-        width: 20rem;
+        width: 19rem;
         border-radius: var(--secondary-radius);
     }
 
@@ -622,7 +625,7 @@ header {
     }
 
     button[type="submit"] {
-        margin: 20px 0;
+        margin: 30px 0;
     }
 
     /* FINE CONTATTACI */
