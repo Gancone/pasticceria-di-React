@@ -21,7 +21,7 @@
 .light-mode {
     --crema: #F7E1C1;
     --rosa: #F8B195;
-    --marrone: #a8745f;
+    --marrone: #e28662;
     --shadow: 0 5px 15px rgba(0, 0, 0, 0.521);
     transition: var(--main-transition);
     --crema-sporco: #FAF9F6;
@@ -440,7 +440,7 @@ header {
 
 .paragraph-about {
     text-align: center;
-    font-size: 24px;
+    font-size: 18px;
     color: var(--color-text);
 }
 
