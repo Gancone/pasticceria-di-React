@@ -4,7 +4,7 @@ const dolci = [
         immagine: "https://www.cucina-naturale.it/wp-content/uploads/2016/11/tiramisu.jpg",
         nome: "Tiramisù",
         descrizione: "Soffice dessert al caffè con savoiardi, mascarpone e cacao.",
-        prezzo: 5.50,
+        prezzo: 5.00,
         descrizioneCompleta: "Un classico senza tempo: il Tiramisù è un dolce che incanta con la sua leggerezza e cremosità. I savoiardi inzuppati nel caffè si sposano perfettamente con il mascarpone e una spolverata di cacao per un'esperienza irresistibile."
     },
     {

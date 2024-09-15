@@ -57,11 +57,11 @@ const SingleCard = ({ immagine, nome, prezzo, descrizione, id }) => {
             <div className='container-body'>
                 <h3>{nome}</h3>
                 <p>{descrizione}</p>
-                <h4>{parseInt(prezzo).toFixed(2)} €</h4>
+                <h4>{parseFloat(prezzo).toFixed(2)} €</h4>
             </div>
             <div className='container-buy'>
                 {/* <h2 className='operator add'>-</h2> */}
-                <button>Compra</button>
+                <Link to={`/lista/${id}`} className="btn-error-page">Info</Link>
                 {/* <h2 className='operator'>+</h2> */}
             </div>
 

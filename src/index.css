@@ -28,6 +28,8 @@
     --secondary-shadow: 0px 12px 20px rgb(22, 22, 22);
     --gradient: linear-gradient(132deg, rgba(247, 225, 193, 1) 0%, rgba(108, 74, 61, 1) 50%, rgba(247, 225, 193, 1)90%);
     --reserved-name: #f7ac4b;
+
+    --hover-primary: rgba(255, 153, 102, 0.2);
 }
 
 .dark-mode {
@@ -40,6 +42,7 @@
     --secondary-shadow: 0px 12px 20px rgb(77, 77, 77);
     --gradient: linear-gradient(130deg, rgba(168, 92, 92, 1) 0%, rgba(46, 31, 27, 1) 50%, rgba(168, 92, 92, 1) 100%);
     --reserved-name: #e09737;
+    --hover-primary: rgba(255, 102, 51, 0.2);
 }
 
 body {
@@ -102,10 +105,8 @@ a {
     color: var(--crema);
     transition: var(--main-transition);
     position: relative;
-    /* Necessario per posizionare ::before */
 }
 
-/* Pseudo-elemento ::before per la striscia sottostante */
 .nav-links a::before {
     content: "";
     position: absolute;
@@ -119,7 +120,6 @@ a {
     transition: transform 0.3s ease;
 }
 
-/* Effetto hover per la striscia sottostante */
 .nav-links a:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left;
@@ -127,7 +127,6 @@ a {
 
 .nav-links a:hover {
     color: var(--crema);
-    /* Cambia il colore del testo quando si passa sopra */
 }
 
 .nav-image {
@@ -153,21 +152,36 @@ a {
     height: 32rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
     margin: 10px 20px;
+    border: 3px solid var(--marrone);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     transition: var(--main-transition);
+    position: relative;
+    overflow: hidden;
 }
 
-.card:hover {
-    transition: var(--main-transition);
-    box-shadow: var(--shadow);
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--hover-primary);
+    transition: height 0.5s ease-in-out;
+    z-index: 1;
+}
+
+.card:hover::before {
+    height: 100%;
 }
 
 .container-img {
+    position: relative;
+    z-index: 2;
     margin-top: 5px;
     width: 17rem;
     height: 12rem;
@@ -175,6 +189,8 @@ a {
 }
 
 .container-body {
+    position: relative;
+    z-index: 2;
     text-align: center;
 }
 
@@ -240,6 +256,7 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 
 }
 
@@ -471,6 +488,8 @@ header {
 /* ERROR PAGE */
 
 .btn-error-page {
+    position: relative;
+    z-index: 2;
     border-radius: var(--radius);
     border: 4px solid var(--crema);
     width: 6rem;
@@ -499,7 +518,7 @@ header {
     color: var(--marrone);
 }
 
-@media screen and (max-width: 1310px) {
+@media screen and (max-width: 900px) {
 
 
     /* NAVBAR */
@@ -526,6 +545,7 @@ header {
 
     .links-container.show ul {
         display: flex;
+        transition: 0.3s;
     }
 
     .links-container {

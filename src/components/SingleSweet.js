@@ -18,9 +18,9 @@ const SingleSweet = () => {
                 <h1>{singoloSweet.nome}</h1>
                 <p>{singoloSweet.descrizioneCompleta}</p>
                 <h2>{parseFloat(singoloSweet.prezzo).toFixed(2)} €</h2>
-                <div>
+                {/* <div>
                     <button>Compra</button>
-                </div>
+                </div> */}
 
             </div>
         </div>
