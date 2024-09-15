@@ -466,7 +466,7 @@ header {
 
 .footer-social li {
     list-style-type: none;
-    margin: 0 3rem;
+    margin: 0 1.5rem;
 
 }
 
@@ -479,6 +479,8 @@ header {
 
 .footer-reserved {
     text-transform: uppercase;
+    text-align: center;
+    margin-top: 0;
 }
 
 .reserved-name {

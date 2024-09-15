@@ -7,7 +7,7 @@ const Footer = () => {
             <div className='footer-social'>
                 <SocialBar />
             </div>
-            <h3 className='footer-reserved'>all &copy; reserved to <span className='reserved-name'>Pasticceria React</span></h3>
+            <h3 className='footer-reserved'>all &copy; reserved to<br /> <span className='reserved-name'>Pasticceria React</span></h3>
 
         </footer>
     )
